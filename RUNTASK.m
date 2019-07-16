@@ -55,11 +55,13 @@ try
 catch err
     Screen('CloseAll'); ShowCursor();
     error('Error in setting up LabJack. Please check equipment.');
+    return
 end
 
 if lj.isOpen == 0
     Screen('CloseAll'); ShowCursor();
-    error('lj.isOpen = 0. Please check labJack.');  
+    error('lj.isOpen = 0. Please check labJack.'); 
+    return
 end
 
 Priority(9);
